@@ -448,8 +448,8 @@ void HomeAssistantSendDiscoverConfig() {
   hass_discover_signal_sensor["~"] = "homeassistant/sensor/"+clientId+"W";
   hass_discover_signal_sensor["device_class"] = "signal_strength";
   hass_discover_signal_sensor["name"] = "Signal Strength "+clientId;
-  hass_discover_signal_sensor["state_topic"] = "~/WiFi/RSSI_pct";        
-  hass_discover_signal_sensor["unit_of_measurement"] = "%"; 
+  hass_discover_signal_sensor["state_topic"] = "~/WiFi/RSSI";        
+  hass_discover_signal_sensor["unit_of_measurement"] = "dBm"; 
   hass_discover_signal_sensor["uniq_id"] = "W"+String(ESP.getChipId(), HEX); // unique_id
   hass_discover_signal_sensor["avty_t"] = String("homeassistant/light/"+clientId+"/state");  // availability_topic
   hass_discover_signal_sensor["pl_avail"] = "online";        // payload_available
