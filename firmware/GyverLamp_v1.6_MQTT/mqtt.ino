@@ -431,7 +431,7 @@ void HomeAssistantSendDiscoverConfig() {
   //mqttclient.publish(String("homeassistant/light/"+clientId+"/config").c_str(), "");
   #endif
 
-  if (mqttclient.beginPublish(String("homeassistant/light/"+clientId+"/config").c_str(), hass_discover_str.length(), true)) {
+  if (mqttclient.beginPublish(String("homeassistant/light/"+clientId+"/light/config").c_str(), hass_discover_str.length(), true)) {
 
     mqttclient.print(hass_discover_str.c_str());
     mqttclient.endPublish() ? Serial.println("Success sent discover message") : Serial.println("Field to send discover message");
@@ -465,7 +465,7 @@ void HomeAssistantSendDiscoverConfig() {
 
   hass_discover_signal_sensor_str += dev_reg_s;
 
-  if (mqttclient.beginPublish(String("homeassistant/sensor/"+clientId+"W/config").c_str(), hass_discover_signal_sensor_str.length(), true)) {
+  if (mqttclient.beginPublish(String("homeassistant/sensor/"+clientId+"/wifi_signal/config").c_str(), hass_discover_signal_sensor_str.length(), true)) {
 
     mqttclient.print(hass_discover_signal_sensor_str.c_str());
     mqttclient.endPublish() ? Serial.println("Success sent WiFi signal discover message") : Serial.println("Field to send WiFi signal discover message");
@@ -494,7 +494,7 @@ void HomeAssistantSendDiscoverConfig() {
   hass_discover_uptime_sensor_str = hass_discover_uptime_sensor_str.substring(0, hass_discover_uptime_sensor_str.length() - 1);
   hass_discover_uptime_sensor_str += dev_reg_s;
 
-  if (mqttclient.beginPublish(String("homeassistant/sensor/"+clientId+"U/config").c_str(), hass_discover_uptime_sensor_str.length(), true)) {
+  if (mqttclient.beginPublish(String("homeassistant/sensor/"+clientId+"/uptime/config").c_str(), hass_discover_uptime_sensor_str.length(), true)) {
 
     mqttclient.print(hass_discover_uptime_sensor_str.c_str());
     mqttclient.endPublish() ? Serial.println("Success sent Uptime signal discover message") : Serial.println("Field to send Uptime signal discover message");
