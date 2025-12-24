@@ -99,7 +99,7 @@ int Get_EFFIDX (String effect) {
   if (effect.equals("Демо")) return 33;
 
   #endif
-
+  return -1;
 }
 
 String Get_EFFName (int eff_idx) {
@@ -184,6 +184,7 @@ String Get_EFFName (int eff_idx) {
 
   #endif
 
+  return "";
 }
 
 void MQTTUpdateState () {
